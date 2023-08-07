@@ -1,0 +1,12 @@
+.item{
+    color: #fff;
+    margin: 10px;
+    
+}
+.item a:hover{
+color: aqua;
+}
+.logo{
+    width: 50px;
+display:flex;
+}

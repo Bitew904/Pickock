@@ -1,0 +1,59 @@
+
+    <div class="navbar align-item-center shadow-sm">
+        <div class="navbar-brand align-item-center d-flex">
+            
+                
+                <div class="item">
+                    
+                        <a (click)="filter('')">New</a>
+                </div>
+                <div class="item">
+        
+                        <a (click)="filter('Jewelery')">Brand</a>
+                </div>
+                <div class="item">
+                   
+                        <a>Sell</a>
+                </div>
+                <div class="item">
+                   
+                        <a>Baby(1-36mth)</a>
+            </div>
+            <div class="item">
+                   
+                <a>Kids(2-5yrs)</a>
+        </div>
+      
+        <div class="item">
+                   
+                <a>Kids(6-12yrs)</a>
+    </div>
+   
+    <div class="item">
+                   
+        <a>Kids(10-16yrs)</a>
+</div>
+<div class="item">
+                   
+        <a>Teens(10-16yrs)</a>
+</div>
+</div>
+    
+        <div  class="form-group">
+            <i class="fas fa-search"></i> <input type="text"  [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="search">
+        </div>
+        
+    </div>
+<div class="container">
+        <div class="row">
+                <ng-container *ngFor="let item of filterCatagory | filter:searchKey:'title'">
+                   <div class="card col-md-3">
+                        <img src="{{item.image}}" alt="">
+                        <h4 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h4>
+                        <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
+                        <p>{{item.price}}<strong style="color: green;">Birr</strong>></p>
+                        <button class="btn btn-primary" (click) = addtocart(item)>Add to cart</button>
+                   </div>
+                </ng-container>
+</div>
+   
